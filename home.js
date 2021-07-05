@@ -42,9 +42,39 @@ alert(saludo); */
 
 // Sumar diez numeros más al número que le pasemos
 
-let num = parseInt(prompt('Ingrese un número menor a 50'));
+// let num = parseInt(prompt('Ingrese un número menor a 50'));
 
-for(let i = 0; i <= 10; i++) {
-    let resultado = num + i;
-    console.log(resultado);
+// for(let i = 0; i <= 10; i++) {
+//     let resultado = num + i;
+//     console.log(resultado);
+// }
+
+// Clase 05
+
+class Alumno {
+    constructor(nombre, primeraNota, segundaNota, terceraNota, cuartaNota) {
+        this.nombre = nombre;
+        this.primeraNota = parseInt(primeraNota);
+        this.segundaNota = parseInt(segundaNota);
+        this.terceraNota = parseInt(terceraNota); 
+        this.cuartaNota = parseInt(cuartaNota)
+    }
+
+    promedio() {
+        let notaFinal = Math.round((this.primeraNota + this.segundaNota + this.terceraNota + this.cuartaNota) / 4);
+        console.log(`El alumno ${this.nombre} tiene un promedio de ${notaFinal}`);
+        return `El alumno ${this.nombre} tiene un promedio de ${notaFinal}`; 
+    }
 }
+
+function crearAlumno() {
+    let nombre = prompt('Ingrese su nombre');
+    let nota1 = prompt('Ingresa tu primera nota');
+    let nota2 = prompt('Ingresa tu segunda nota');
+    let nota3 = prompt('Ingresa tu tercera nota');
+    let nota4 = prompt('Ingresa tu cuarta nota');
+    return new Alumno(nombre, nota1, nota2, nota3, nota4);
+
+}
+
+crearAlumno().promedio();
