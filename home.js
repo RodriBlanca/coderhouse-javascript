@@ -49,7 +49,57 @@ alert(saludo); */
 //     console.log(resultado);
 // }
 
+// Clase 04 
+
+// const mostrarPrecio = () => {
+//     let costo;
+//     let iva
+//     const recibirCosto = () => {
+//         costo = parseInt(prompt('¿Cuál es el costo?'));
+//         return costo;
+//     }
+//     const calcularIva = () => {
+//         iva = costo * 0.21;
+//         return iva;
+//     }
+//     recibirCosto();
+//     calcularIva();
+//     return alert(`El IVA es de ${iva}`);
+// }
+
+// mostrarPrecio();
+
 // Clase 05
+
+// class Alumno {
+//     constructor(nombre, primeraNota, segundaNota, terceraNota, cuartaNota) {
+//         this.nombre = nombre;
+//         this.primeraNota = parseInt(primeraNota);
+//         this.segundaNota = parseInt(segundaNota);
+//         this.terceraNota = parseInt(terceraNota); 
+//         this.cuartaNota = parseInt(cuartaNota)
+//     }
+
+//     promedio() {
+//         let notaFinal = Math.round((this.primeraNota + this.segundaNota + this.terceraNota + this.cuartaNota) / 4);
+//         console.log(`El alumno ${this.nombre} tiene un promedio de ${notaFinal}`);
+//         return `El alumno ${this.nombre} tiene un promedio de ${notaFinal}`; 
+//     }
+// }
+
+// function crearAlumno() {
+//     let nombre = prompt('Ingrese su nombre');
+//     let nota1 = prompt('Ingresa tu primera nota');
+//     let nota2 = prompt('Ingresa tu segunda nota');
+//     let nota3 = prompt('Ingresa tu tercera nota');
+//     let nota4 = prompt('Ingresa tu cuarta nota');
+//     return new Alumno(nombre, nota1, nota2, nota3, nota4);
+
+// }
+
+// crearAlumno().promedio();
+
+// Clase 06 - Arrays
 
 class Alumno {
     constructor(nombre, primeraNota, segundaNota, terceraNota, cuartaNota) {
@@ -62,8 +112,18 @@ class Alumno {
 
     promedio() {
         let notaFinal = Math.round((this.primeraNota + this.segundaNota + this.terceraNota + this.cuartaNota) / 4);
-        console.log(`El alumno ${this.nombre} tiene un promedio de ${notaFinal}`);
-        return `El alumno ${this.nombre} tiene un promedio de ${notaFinal}`; 
+        // Inclusión de Array para el desafío
+        let notas = [];
+        notas.push(this.primeraNota);
+        notas.push(this.segundaNota);
+        notas.push(this.terceraNota);
+        notas.push(this.cuartaNota);
+        console.log(`El alumno ${this.nombre} tiene un promedio de ${notaFinal} y sus notas fueron ${notas[0]}, ${notas[1]}, ${notas[2]} y ${notas[3]}`);
+        return `El alumno ${this.nombre} tiene un promedio de ${notaFinal} y sus notas fueron ${notas[0]}, ${notas[1]}, ${notas[2]} y ${notas[3]}`; 
+    }
+
+    notasObtenidas() {
+        return 'Las notas obtenidas fueron ${notas[0]}, ${notas[1]}, ${notas[2]} y ${notas[3]}'
     }
 }
 
@@ -78,3 +138,4 @@ function crearAlumno() {
 }
 
 crearAlumno().promedio();
+
